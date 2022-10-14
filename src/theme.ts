@@ -1,0 +1,296 @@
+import type { Theme } from 'theme-ui';
+
+// From https://theme-ui.com/guides/typescript/
+const makeTheme = <T extends Theme>(t: T) => t;
+
+export const theme = makeTheme({
+  fonts: {
+    body: 'GreycliffCF',
+    heading: 'GreycliffCF',
+    monospace: 'GreycliffCF',
+  },
+  fontSizes: [12, 14, 16, 18, 20, 24, 32],
+  fontWeights: {
+    regular: 400,
+    semibold: 500,
+    bold: 700,
+  },
+  lineHeights: ['16px', '20px', '24px', '32px', '40px'],
+  space: [
+    0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 72, 80, 96, 112, 128, 144,
+  ],
+  radii: [0, 4, 8, 16, 32, 40, 48, 56, 64],
+  sizes: [0, 4, 8, 16, 32, 40, 48, 56, 64],
+  colors: {
+    neutralDark: '#050400',
+    neutralLight: '#FFFFFF',
+    backgroundWeak: '#F4F3EF',
+    primaryHover: '#E0A100',
+    primaryDefault: '#F3BB0B',
+    primaryPressed: '#FBE8A8',
+    primaryHighlight: '#FFF5D6',
+    secondaryHover: '#2F2A23',
+    secondaryDefault: '#3C3931',
+    secondaryLabel: '#615E54',
+    secondaryPressed: '#C0BAAE',
+    secondaryDisabled: '#E6E2DA',
+    secondaryHighlight: '#EEEBE6',
+    warningHover: '#AE4B00',
+    warningDefault: '#FF760F',
+    warningPressed: '#FFCFAB',
+    warningHighlight: '#FFECDE',
+    successHover: '#617103',
+    successDefault: '#ACC806',
+    successPneutralLightressed: '#E2ECA8',
+    successHighlight: '#F4F7DF',
+    informationHover: '#1868C7',
+    informationDefault: '#589FF1',
+    informationPressed: '#B2DBFF',
+    informationHighlight: '#E5F4FF',
+    errorHover: '#8B1407',
+    errorDefault: '#F4230B',
+    errorPressed: '#FFD6D1',
+    errorHighlight: '#FFF3F2',
+    primaryDisabled: '#F4F3EF',
+  },
+  text: {
+    headingXs: {
+      fontSize: 2,
+      fontWeight: 'bold',
+      lineHeight: 2,
+    },
+    headingSm: {
+      fontSize: 3,
+      fontWeight: 'bold',
+      lineHeight: 2,
+    },
+    headingMd: {
+      fontSize: 4,
+      fontWeight: 'bold',
+      lineHeight: 3,
+    },
+    headingLg: {
+      fontSize: 5,
+      fontWeight: 'bold',
+      lineHeight: 4,
+    },
+    paragraphSm: {
+      fontSize: 0,
+      lineHeight: 1,
+    },
+    paragraphMd: {
+      fontSize: 1,
+      lineHeight: 1,
+    },
+    paragraphLg: {
+      fontSize: 2,
+      lineHeight: 2,
+    },
+    paragraphXl: {
+      fontSize: 3,
+      lineHeight: 2,
+    },
+    paragraphBoldSm: {
+      variant: 'paragraphSm',
+      fontWeight: 'bold',
+    },
+    paragraphBoldMd: {
+      variant: 'paragraphMd',
+      fontWeight: 'bold',
+    },
+    paragraphBoldLg: {
+      variant: 'paragraphLg',
+      fontWeight: 'bold',
+    },
+    paragraphBoldXl: {
+      variant: 'paragraphXl',
+      fontWeight: 'bold',
+    },
+    labelSm: {
+      fontSize: 0,
+      lineHeight: 0,
+      fontWeight: 'semibold',
+    },
+    labelMd: {
+      fontSize: 1,
+      lineHeight: 1,
+      fontWeight: 'semibold',
+    },
+    labelLg: {
+      fontSize: 2,
+      lineHeight: 1,
+      fontWeight: 'semibold',
+    },
+    labelCapsSm: {
+      textTransform: 'uppercase',
+      fontSize: 0,
+      lineHeight: 0,
+      fontWeight: 'semibold',
+    },
+    labelCapsLg: {
+      textTransform: 'uppercase',
+      fontSize: 1,
+      lineHeight: 1,
+      fontWeight: 'semibold',
+    },
+  },
+  styles: {
+    // https://theme-ui.com/theme-spec/#styles
+    root: {
+      fontFamily: 'body',
+      fontSize: 2,
+      fontWeight: 'regular',
+      height: '100%',
+      width: '100%',
+    },
+    spinner: {
+      color: 'neutralDark',
+      width: '4',
+      height: '4',
+    },
+  },
+  buttons: {
+    primary: {
+      bg: 'primaryDefault',
+      color: 'neutralDark',
+      paddingX: '4',
+      paddingY: '2',
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: 'transparent',
+      borderRadius: '2',
+      position: 'relative',
+      cursor: 'pointer',
+      transition: '0.3s',
+      variant: 'text.headingXs',
+      '&:hover': {
+        bg: 'primaryHover',
+      },
+      '&:focus:active': {
+        backgroundColor: 'primaryDefault',
+        outlineOffset: '6px',
+        outlineWidth: '1px',
+        outlineStyle: 'solid',
+        outlineColor: 'primaryDefault',
+      },
+    },
+    secondary: {
+      bg: 'secondaryDefault',
+      color: 'neutralLight',
+      paddingX: '4',
+      paddingY: '2',
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: 'transparent',
+      borderRadius: '2',
+      position: 'relative',
+      cursor: 'pointer',
+      transition: '0.3s',
+      variant: 'text.headingXs',
+      '&:hover': {
+        bg: 'secondaryHover',
+      },
+      '&:focus:active': {
+        backgroundColor: 'secondaryDefault',
+        outlineOffset: '6px',
+        outlineWidth: '1px',
+        outlineStyle: 'solid',
+        outlineColor: 'secondaryDefault',
+      },
+    },
+    tertiary: {
+      bg: 'transparent',
+      color: 'neutralDark',
+      paddingX: '4',
+      paddingY: '2',
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: 'secondaryHighlight',
+      borderRadius: '2',
+      position: 'relative',
+      cursor: 'pointer',
+      transition: '0.3s',
+      variant: 'text.headingXs',
+      '&:hover': {
+        bg: 'secondaryHover',
+        color: 'neutralLight',
+        path: {
+          fill: 'neutralLight',
+        },
+      },
+      '&:focus:active': {
+        backgroundColor: 'transparent',
+        outlineOffset: '6px',
+        outlineWidth: '1px',
+        outlineStyle: 'solid',
+        outlineColor: 'secondaryHighlight',
+        color: 'neutralDark',
+        path: {
+          fill: 'neutralDark',
+        },
+      },
+    },
+    ghost: {
+      color: 'secondaryDefault',
+      bg: 'transparent',
+      paddingX: '9',
+      paddingY: '2',
+      borderRadius: '2',
+      position: 'relative',
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: 'transparent',
+      cursor: 'pointer',
+      transition: '0.3s',
+      variant: 'text.headingXs',
+      '&:hover': {
+        bg: 'secondaryHover',
+        color: 'neutralLight',
+        path: {
+          fill: 'neutralLight',
+        },
+      },
+      '&:focus:active': {
+        bg: 'transparent',
+        color: 'secondaryDefault',
+        borderColor: 'secondaryDefault',
+        path: {
+          fill: 'secondaryDefault',
+        },
+      },
+    },
+    disabled: {
+      bg: 'secondaryDisabled',
+      color: 'secondaryLabel',
+      cursor: 'default',
+      '&:hover': {
+        bg: 'secondaryDisabled',
+        color: 'secondaryLabel',
+      },
+    },
+  },
+  forms: {
+    textarea: {
+      borderRadius: '2',
+      borderColor: 'secondaryDisabled',
+      color: 'secondaryPressed',
+      fontFamily: 'body',
+      fontSize: 2,
+      fontWeight: 'regular',
+      p: '3',
+      lineHeight: '2',
+      resize: 'none',
+      outline: 'none',
+      transition: '0.3s',
+      '&:focus': {
+        color: 'neutralDark',
+        borderColor: 'secondaryPressed',
+      },
+      '&.error': {
+        borderColor: 'errorDefault',
+      },
+    },
+  },
+});
+
+export type TypedTheme = typeof theme;
